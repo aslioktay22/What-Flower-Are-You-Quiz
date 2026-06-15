@@ -42,7 +42,6 @@ const resultPages = {
 
 // =======================
 // ANSWER → FLOWER MAPS
-// (Index order MUST match <li>s)
 // =======================
 
 const answerMappings = [
@@ -81,7 +80,6 @@ const answerMappings = [
 // SELECTING ANSWERS
 // =======================
 
-// Add click behavior to all <li> choices
 const allQuestions = document.querySelectorAll("section ul");
 
 allQuestions.forEach((ul, qIndex) => {
@@ -157,7 +155,7 @@ document.getElementById("submit-btn").addEventListener("click", () => {
   allQuestions.forEach((ul, index) => {
     const selected = ul.querySelector("li.selected");
     if (!selected) {
-      unanswered.push(index + 1); // store 1-based question index
+      unanswered.push(index + 1);
     }
   });
 
@@ -179,7 +177,7 @@ document.getElementById("submit-btn").addEventListener("click", () => {
   if (targetUrl) {
     window.location.href = targetUrl;
   } else {
-    alert("Oops — I couldn't find a result page for that flower.");
+    alert("Oops — Couldn't find a result page for that flower.");
   }
 
 });
